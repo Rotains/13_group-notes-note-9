@@ -193,3 +193,23 @@ return 0;
 매크로 함수명은 다음에 바로 괄호를 입력해줘야해?
 매크로 함수명과 괄호 사이에 공백이 있으면 매개변수를 가진 매크로 함수가 아닌 매크로 상수로 인식하기 때문에 반드시 다음에 괄호를 입력해주자 
 그렇구나 간단하고 반복적인 내용을 매크로 함수로 처리하면 쉽고 간편하게 프로그램을 작성할 수 있겠네 앞으로!
+
+연습문제 12-3
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main()
+{
+	FILE* fp = fopen("basic.txt", "w");
+	for (int i = 1; i <= 100; i++) {
+		int s = 0;
+		for (int j = 1; j <= i; j++) {
+			s += j;
+		}
+		fprintf(fp, "%d %d %d\n", 1, i, s);
+	}
+	fclose(fp);
+	return 0;
+}
+
+윈도우에서 basic.txt 파일을 열면 1부터 100까지 누적해서 더해 나가는 프로그램이 작성 되어있다.
